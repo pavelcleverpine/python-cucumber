@@ -8,6 +8,14 @@
 
 `$ cd python-cucumber`
 
+### Install Virtual environment
+
+`$ python3 -m pip install --user virtualenv`
+
+#### Install requirements in venv
+
+`pip install -r requirements.txt`
+
 #### Configure the project
 
 Navigate to
