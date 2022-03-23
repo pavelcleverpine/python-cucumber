@@ -1,17 +1,10 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 from features.browser import Browser
 
 
 class LoginPageElements(object):
-    BODY = '== $0'
     USER = 'user-name'
-    USER_SUBMIT = '#identifierNext > content > span'
+    USER_SUBMIT = "//input[@id='login-button']"
     PASS = 'password'
-    # SUBMIT = '//input[@id='login-button']' LOGIN_ERROR = " //h3[@data-test='error'][contains(.,'Epic sadface:
-    # Username and password do not match any user in this service')]"
 
 
 class LoginPage(Browser):
@@ -41,7 +34,7 @@ class LoginPage(Browser):
         password_field.send_keys(password)
 
     def submit_login(self):
-        login_btn = self.driver.find_element_by_xpath("//input[@id='login-button']")
+        login_btn = self.driver.find_element_by_xpath(LoginPageElements.USER_SUBMIT)
         login_btn.click()
 
     def login(self, username, password):
