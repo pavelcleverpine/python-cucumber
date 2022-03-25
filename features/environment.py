@@ -19,4 +19,6 @@ def before_all(context):
 
 
 def after_all(context):
-    context.browser.close()
+    context.server.shutdown()
+    context.thread.join()
+    context.browser.quit()
